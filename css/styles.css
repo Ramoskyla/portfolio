@@ -1,0 +1,222 @@
+/* ============================
+   Portfolio CSS (single file)
+   Mobile-first, accessible, maintainable
+   ============================ */
+
+/* ========== variables ========== */
+:root{
+  --bg: #ffffff;
+  --text: #0b2030;        /* dark text */
+  --muted: #51606a;
+  --accent: #0a66c2;      /* strong accent (good contrast) */
+  --radius: 12px;
+  --gap: 1rem;
+  --container-max: 1100px;
+  --ff: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-base: 16px;
+}
+
+/* ========== base reset ========== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { font-family: var(--ff); font-size: var(--fs-base); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ========== layout helpers ========== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Visually hidden but available to screen readers */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
+/* ========== skip link ========== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.15s ease;
+  font-size: 0.95rem;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: none;
+}
+
+/* ========== header ========== */
+.header__inner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Nav */
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.nav__list a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.25rem 0.4rem;
+  font-weight: 500;
+}
+.nav__list a:hover,
+.nav__list a:focus {
+  color: var(--text);
+}
+
+/* ========== sections ========== */
+.section {
+  padding: 2rem 0;
+  border-top: 1px solid #f0f3f5;
+}
+
+/* Headings */
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* ========== About layout ========== */
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.about__figure {
+  margin: 0;
+  width: 140px;
+}
+.about__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #e6eef8;
+}
+
+.about__text p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ========== Projects grid ========== */
+.projects__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.project-card__inner {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(12,24,36,0.06);
+  border: 1px solid #eef6ff;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.project-card__title {
+  margin: 0;
+  font-size: 1rem;
+}
+.project-card__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+}
+
+.project-card__link {
+  display: inline-block;
+  margin-top: 0.45rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Focus styles: visible, high contrast */
+:focus {
+  outline-offset: 3px;
+}
+a:focus,
+button:focus,
+.project-card__link:focus,
+.nav__list a:focus {
+  outline: 3px solid rgba(10,102,194,0.18);
+  border-radius: 6px;
+}
+
+/* ========== footer ========== */
+.site-footer {
+  padding: 1.25rem 0;
+  border-top: 1px solid #f0f3f5;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ========== responsive breakpoints ========== */
+@media (min-width: 700px) {
+  .about__inner {
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+  }
+
+  .projects__grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .site-title { font-size: 1.5rem; }
+}
+
+@media (min-width: 1000px) {
+  .header__inner { padding: 1.25rem 0; }
+}

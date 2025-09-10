@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KYLA RAMOS — Projects</title>
+
+  <!-- preload + stylesheet (single CSS file as required) -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="description" content="Simple accessible portfolio: About me and Projects (HTML + CSS only)" />
+</head>
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header__inner">
+      <h1 class="site-title">KYLA RAMOS</h1> <!-- one H1 only -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main-content">
+    <!-- About section -->
+    <section id="about" class="about section" aria-labelledby="about-heading">
+      <div class="container about__inner">
+        <figure class="about__figure">
+          <img src="assets/profile.jpg" alt="Portrait of Your Name smiling at the camera" class="about__image">
+        </figure>
+
+        <div class="about__text">
+          <h2 id="about-heading" class="section-heading">About</h2>
+          <p>
+            Hi — I'm <strong>KYLA RAMOS</strong>, a 4th-year IT student building accessible front-end UIs and simple web apps.
+            I enjoy designing clean interfaces that work well on mobile and desktop. This portfolio demonstrates semantic HTML,
+            accessible patterns, and a responsive layout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+      <!-- Projects section -->
+    <section id="projects" class="projects section" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading" class="section-heading">Projects</h2>
+
+        <ul class="projects__grid" role="list">
+          <!-- Project 1 -->
+          <li class="project-card">
+            <article class="project-card__inner">
+              <h3 class="project-card__title">Inventory Management System</h3>
+              <p class="project-card__desc">A React Native + MySQL inventory app with item & category management and low-stock alerts.</p>
+              <a class="project-card__link" href="#" aria-label="View Inventory Management System project">View project</a>
+            </article>
+          </li>
+
+          <!-- Project 2 -->
+          <li class="project-card">
+            <article class="project-card__inner">
+              <h3 class="project-card__title">Booking System (Laravel)</h3>
+              <p class="project-card__desc">A booking system built with Laravel, implementing forms, validation, and CRUD features.</p>
+              <a class="project-card__link" href="#" aria-label="View Booking System project">View project</a>
+            </article>
+          </li>
+
+          <!-- Project 3 -->
+          <li class="project-card">
+            <article class="project-card__inner">
+              <h3 class="project-card__title">Dashboard / Analytics</h3>
+              <p class="project-card__desc">A responsive dashboard demonstrating charts and accessible tables (no third-party CSS frameworks).</p>
+              <a class="project-card__link" href="#" aria-label="View Dashboard project">View project</a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- Footer / Contact -->
+    <footer class="site-footer" id="contact" role="contentinfo">
+      <div class="container footer__inner">
+        <p>Contact: <a href="mailto:ramoskm.511.stud@cdd.edu.ph">ramoskm.511.stud@cdd.edu.ph</a></p>
+        <p>&copy; 2025 KYLA RAMOS</p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
